@@ -36,6 +36,15 @@
         <button id="startBtn" class="start">START TEST</button>
       </div>
 
+      <div class="traffic-warning" id="trafficWarning">
+        <div>
+          <span class="traffic-kicker">ESTIMATED TRAFFIC</span>
+          <strong id="trafficTotal">Up to 160 MiB</strong>
+          <p id="trafficBreakdown">Download up to 128 MiB · Upload up to 32 MiB · ping overhead is negligible.</p>
+        </div>
+        <span class="traffic-note">The test stops when it reaches either the time limit or the traffic cap.</span>
+      </div>
+
       <div class="metrics">
         <div class="metric"><span>Ping</span><strong id="ping">—</strong><small>ms</small></div>
         <div class="metric"><span>Jitter</span><strong id="jitter">—</strong><small>ms</small></div>
@@ -45,7 +54,7 @@
 
       <div class="meta">
         <div><span>Vercel region</span><strong id="region">Detecting…</strong></div>
-        <div><span>Test profile</span><strong id="profileLabel">Balanced · 6s</strong></div>
+        <div><span>Test profile</span><strong id="profileLabel">4 streams · 6s · 160 MiB max</strong></div>
       </div>
 
       <details class="settings">
@@ -71,6 +80,22 @@
               <option value="1048576">1 MiB</option>
               <option value="2097152">2 MiB</option>
               <option value="3145728" selected>3 MiB</option>
+            </select>
+          </label>
+          <label>Download traffic cap
+            <select id="downloadCap">
+              <option value="33554432">32 MiB</option>
+              <option value="67108864">64 MiB</option>
+              <option value="134217728" selected>128 MiB</option>
+              <option value="268435456">256 MiB</option>
+            </select>
+          </label>
+          <label>Upload traffic cap
+            <select id="uploadCap">
+              <option value="8388608">8 MiB</option>
+              <option value="16777216">16 MiB</option>
+              <option value="33554432" selected>32 MiB</option>
+              <option value="67108864">64 MiB</option>
             </select>
           </label>
         </div>
