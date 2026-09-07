@@ -15,7 +15,10 @@
   <main class="shell">
     <header>
       <div class="brand">Vercel Speed Test</div>
-      <a class="github" href="https://github.com/yexing17/vercel-speedtest" target="_blank" rel="noreferrer">GitHub</a>
+      <nav class="header-actions">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme"><span id="themeIcon" aria-hidden="true">☀</span><span id="themeLabel">Light</span></button>
+        <a class="github" href="https://github.com/yexing17/vercel-speedtest" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
     </header>
 
     <section class="hero">
@@ -26,88 +29,25 @@
 
     <section class="panel">
       <div class="gauge-wrap">
-        <div class="gauge">
-          <div class="gauge-inner">
-            <div id="phase" class="phase">READY</div>
-            <div id="primaryValue" class="primary">0</div>
-            <div id="primaryUnit" class="unit">Mbps</div>
-          </div>
-        </div>
+        <div class="gauge"><div class="gauge-inner"><div id="phase" class="phase">READY</div><div id="primaryValue" class="primary">0</div><div id="primaryUnit" class="unit">Mbps</div></div></div>
         <button id="startBtn" class="start">START TEST</button>
       </div>
 
-      <div class="traffic-warning" id="trafficWarning">
-        <div>
-          <span class="traffic-kicker">ESTIMATED TRAFFIC</span>
-          <strong id="trafficTotal">Up to 160 MiB</strong>
-          <p id="trafficBreakdown">Download up to 128 MiB · Upload up to 32 MiB · ping overhead is negligible.</p>
-        </div>
-        <span class="traffic-note">The test stops when it reaches either the time limit or the traffic cap.</span>
-      </div>
+      <div class="traffic-warning" id="trafficWarning"><div><span class="traffic-kicker">ESTIMATED TRAFFIC</span><strong id="trafficTotal">Up to 160 MiB</strong><p id="trafficBreakdown">Download up to 128 MiB · Upload up to 32 MiB · ping overhead is negligible.</p></div><span class="traffic-note">The test stops when it reaches either the time limit or the traffic cap.</span></div>
 
-      <div class="metrics">
-        <div class="metric"><span>Ping</span><strong id="ping">—</strong><small>ms</small></div>
-        <div class="metric"><span>Jitter</span><strong id="jitter">—</strong><small>ms</small></div>
-        <div class="metric"><span>Download</span><strong id="download">—</strong><small>Mbps</small></div>
-        <div class="metric"><span>Upload</span><strong id="upload">—</strong><small>Mbps</small></div>
-      </div>
+      <div class="metrics"><div class="metric"><span>Ping</span><strong id="ping">—</strong><small>ms</small></div><div class="metric"><span>Jitter</span><strong id="jitter">—</strong><small>ms</small></div><div class="metric"><span>Download</span><strong id="download">—</strong><small>Mbps</small></div><div class="metric"><span>Upload</span><strong id="upload">—</strong><small>Mbps</small></div></div>
+      <div class="meta"><div><span>Vercel region</span><strong id="region">Detecting…</strong></div><div><span>Test profile</span><strong id="profileLabel">4 streams · 6s · 160 MiB max</strong></div></div>
 
-      <div class="meta">
-        <div><span>Vercel region</span><strong id="region">Detecting…</strong></div>
-        <div><span>Test profile</span><strong id="profileLabel">4 streams · 6s · 160 MiB max</strong></div>
-      </div>
-
-      <details class="settings">
-        <summary>Advanced settings</summary>
-        <div class="settings-grid">
-          <label>Duration
-            <select id="duration">
-              <option value="4">4 seconds</option>
-              <option value="6" selected>6 seconds</option>
-              <option value="10">10 seconds</option>
-            </select>
-          </label>
-          <label>Concurrency
-            <select id="concurrency">
-              <option value="2">2 streams</option>
-              <option value="4" selected>4 streams</option>
-              <option value="6">6 streams</option>
-              <option value="8">8 streams</option>
-            </select>
-          </label>
-          <label>Chunk size
-            <select id="chunkSize">
-              <option value="1048576">1 MiB</option>
-              <option value="2097152">2 MiB</option>
-              <option value="3145728" selected>3 MiB</option>
-            </select>
-          </label>
-          <label>Download traffic cap
-            <select id="downloadCap">
-              <option value="33554432">32 MiB</option>
-              <option value="67108864">64 MiB</option>
-              <option value="134217728" selected>128 MiB</option>
-              <option value="268435456">256 MiB</option>
-            </select>
-          </label>
-          <label>Upload traffic cap
-            <select id="uploadCap">
-              <option value="8388608">8 MiB</option>
-              <option value="16777216">16 MiB</option>
-              <option value="33554432" selected>32 MiB</option>
-              <option value="67108864">64 MiB</option>
-            </select>
-          </label>
-        </div>
-      </details>
-
+      <details class="settings"><summary>Advanced settings</summary><div class="settings-grid">
+        <label>Duration<select id="duration"><option value="4">4 seconds</option><option value="6" selected>6 seconds</option><option value="10">10 seconds</option></select></label>
+        <label>Concurrency<select id="concurrency"><option value="2">2 streams</option><option value="4" selected>4 streams</option><option value="6">6 streams</option><option value="8">8 streams</option></select></label>
+        <label>Chunk size<select id="chunkSize"><option value="1048576">1 MiB</option><option value="2097152">2 MiB</option><option value="3145728" selected>3 MiB</option></select></label>
+        <label>Download traffic cap<select id="downloadCap"><option value="33554432">32 MiB</option><option value="67108864">64 MiB</option><option value="134217728" selected>128 MiB</option><option value="268435456">256 MiB</option></select></label>
+        <label>Upload traffic cap<select id="uploadCap"><option value="8388608">8 MiB</option><option value="16777216">16 MiB</option><option value="33554432" selected>32 MiB</option><option value="67108864">64 MiB</option></select></label>
+      </div></details>
       <p id="status" class="status">Ready to test.</p>
     </section>
-
-    <footer>
-      <span>Open source · MIT</span>
-      <span>Powered entirely by Vercel</span>
-    </footer>
+    <footer><span>Open source · MIT</span><span>Powered entirely by Vercel</span></footer>
   </main>
   <script type="module" src="/app.js"></script>
 </body>
