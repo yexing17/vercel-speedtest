@@ -1,0 +1,10 @@
+{
+  "name": "vercel-speedtest",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A privacy-friendly internet speed test powered entirely by Vercel.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
